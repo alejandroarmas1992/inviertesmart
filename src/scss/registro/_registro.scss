@@ -1,0 +1,72 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+
+
+
+.calculadora {
+    background-color: #ffffff;
+    
+    padding: 20px;
+    box-shadow:   rgba(0, 0, 0, 0.2);
+    width: auto;
+    height: auto;
+}
+.parte1{
+    height: 50%;
+    
+}
+.parte2{
+    height: 50%;
+}
+
+label {
+    display: inline-block;
+    width: 100%;
+}
+
+input[type="number"] {
+    width: 80%;
+}
+
+input[type="submit"] {
+    margin-top: 10px;
+}
+
+.barrac {
+    background-color: #0056b3;
+    &__contenido {
+        @include m.contenedor;
+        display: flex;
+        flex-direction: column;
+
+        @include m.desktop {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+
+    .navegacionc {
+        display: flex;
+        flex-direction: column;
+        @include m.desktop {
+            flex-direction: row;
+        }
+      
+        &__enlace {
+            color: v.$blanco;
+            font-size: 2rem;
+            padding: 2rem;
+            font-weight: v.$black;
+            text-transform: uppercase;
+            text-align: center;
+    
+            &--actual,
+            &:hover {
+                background-color: #000000;
+                color: #ffffff;
+            }
+        }
+    }
+}
